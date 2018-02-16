@@ -47,13 +47,12 @@ int main ()
     return 0;
 }
 </textarea>
-
 </div>
 
 
 <!-- FAB -->
 <div class="fixed-action-btn">
-    <a class="btn-floating btn-large waves-effect <?=$themeColor?>">
+    <a class="btn-floating btn-large waves-effect <?=$themeColor?>" onclick='run()'>
         <i class="large material-icons">folder</i>
     </a>
 </div>
@@ -64,14 +63,7 @@ int main ()
 <script src="static/codemirror-5.34.0/lib/codemirror.js"></script>
 <script src="static/codemirror-5.34.0/mode/clike/clike.js"></script>
 
-<script>
-    var editor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
-        lineNumbers: true,
-        indentUnit: 4,
-        theme: 'dracula',
-        mode: "text/x-c++src"
-    });
-</script>
+<script src='script.js'></script>
 
 </body>
 </html>
