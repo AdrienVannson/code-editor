@@ -9,10 +9,12 @@ $themeColor = 'orange';
 <title>Code Editor</title>
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link type="text/css" rel="stylesheet" href="static/materialize/css/materialize.min.css"  media="screen,projection"/>
+<link type="text/css" rel="stylesheet" href="static/materialize/css/materialize.min.css" media="screen,projection"/>
 
 <link rel="stylesheet" href="static/codemirror-5.34.0/lib/codemirror.css">
 <link rel="stylesheet" href="static/codemirror-5.34.0/theme/dracula.css">
+
+<link type="text/css" rel="stylesheet" href="styles.css"/>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -34,6 +36,7 @@ $themeColor = 'orange';
 
 
 <!-- Code editor -->
+<div id="code-editor-container">
 <textarea id="code-editor">
 #include <iostream>
 
@@ -44,6 +47,9 @@ int main ()
     return 0;
 }
 </textarea>
+
+</div>
+
 
 <!-- FAB -->
 <div class="fixed-action-btn">
