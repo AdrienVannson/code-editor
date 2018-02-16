@@ -67,6 +67,7 @@ int main ()
 <script>
     var editor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
         lineNumbers: true,
+        indentUnit: 4,
         theme: 'dracula',
         mode: "text/x-c++src"
     });
