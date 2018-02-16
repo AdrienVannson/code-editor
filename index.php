@@ -1,5 +1,5 @@
 <?php
-$couleurTheme = 'orange';
+$themeColor = 'orange';
 ?>
 
 <!DOCTYPE html>
@@ -21,9 +21,9 @@ $couleurTheme = 'orange';
 <body>
 
 
-<!-- Barre de menu -->
+<!-- Toolbar -->
 <nav>
-    <div class="nav-wrapper <?=$couleurTheme?>">
+    <div class="nav-wrapper <?=$themeColor?>">
         <a href="#" class="brand-logo">Code Editor</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="#">New</a></li>
@@ -31,6 +31,7 @@ $couleurTheme = 'orange';
         </ul>
     </div>
 </nav>
+
 
 <!-- Code editor -->
 <textarea id="code-editor">
@@ -43,6 +44,13 @@ int main ()
     return 0;
 }
 </textarea>
+
+<!-- FAB -->
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large waves-effect <?=$themeColor?>">
+        <i class="large material-icons">folder</i>
+    </a>
+</div>
 
 
 <script type="text/javascript" src="static/materialize/js/materialize.min.js"></script>
