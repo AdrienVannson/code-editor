@@ -1,5 +1,5 @@
 <?php
-$couleurTheme = 'cyan';
+$couleurTheme = 'orange';
 ?>
 
 <!DOCTYPE html>
