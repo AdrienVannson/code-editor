@@ -7,6 +7,9 @@ var editor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
     mode: "text/x-c++src"
 });
 
+M.Modal.init(document.querySelector('.modal'), {});
+
+
 function run ()
 {
     var xhr = new XMLHttpRequest();

@@ -1,4 +1,6 @@
 <?php
+include_once('model/projects.php');
+
 $themeColor = 'blue-grey';
 ?>
 
@@ -29,7 +31,7 @@ $themeColor = 'blue-grey';
         <a href="#" class="brand-logo">Code Editor</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="#">New</a></li>
-            <li><a href="#">Open</a></li>
+            <li><a class="modal-trigger" href="#open-project">Open</a></li>
         </ul>
     </div>
 </nav>
@@ -55,6 +57,26 @@ int main ()
     <a class="btn-floating btn-large waves-effect <?=$themeColor?>" onclick='run()'>
         <i class="large material-icons">folder</i>
     </a>
+</div>
+
+
+<!-- Open a project -->
+<div class="modal" id="open-project">
+    <div class="modal-content">
+        <h2>Projects</h2>
+
+        <?php
+        foreach (getProjects() as $project) {
+            ?>
+            <a href="#" class="btn-flat waves-effect"><?=$project->getName();?></a><br/>
+            <?php
+        }
+        ?>
+
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="modal-action modal-close waves-effect waves-red btn-flat">Close</a>
+    </div>
 </div>
 
 
