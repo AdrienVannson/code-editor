@@ -62,6 +62,7 @@ int main ()
 
 <script src="static/codemirror-5.34.0/lib/codemirror.js"></script>
 <script src="static/codemirror-5.34.0/mode/clike/clike.js"></script>
+<script src="static/codemirror-5.34.0/addon/edit/closebrackets.js"></script>
 
 <script src='script.js'></script>
 
