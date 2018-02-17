@@ -37,7 +37,6 @@ $themeColor = 'blue-grey';
 
 
 <!-- Code editor -->
-<div id="code-editor-container">
 <textarea id="code-editor">
 #include <iostream>
 
@@ -48,7 +47,6 @@ int main ()
     return 0;
 }
 </textarea>
-</div>
 
 
 <!-- FAB -->
