@@ -68,6 +68,9 @@ int main ()
         Compilation errors:
         <div class="card-panel" id="compilation-errors"></div>
 
+        Output:
+        <div class="card-panel" id="output"></div>
+
         <a href="#" class="btn waves-effect green" onclick="runProg()">Go !</a>
 
     </div>

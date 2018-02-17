@@ -28,6 +28,9 @@ function runProg ()
 
             var compilationErrors = res.compilationErrors.replace(/\n/g, '<br/>').replace(/ /g, '&nbsp;');
             document.getElementById('compilation-errors').innerHTML = compilationErrors;
+
+            var output = res.output.replace(/\n/g, '<br/>').replace(/ /g, '&nbsp;');
+            document.getElementById('output').innerHTML = output;
         }
     };
 }
