@@ -10,7 +10,7 @@ var editor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
 M.Modal.init(document.querySelector('.modal'), {});
 
 
-function run ()
+function runProg ()
 {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "api/run.php", true);

@@ -70,7 +70,7 @@ int main ()
         Compilation errors:
         <div class="card-panel" id="compilation-errors"></div>
 
-        <a href="#" class="btn waves-effect green" onclick="run()">Go !</a>
+        <a href="#" class="btn waves-effect green" onclick="runProg()">Go !</a>
 
     </div>
     <div class="modal-footer">
