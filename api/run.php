@@ -17,12 +17,12 @@ fclose($inputFile);
 echo '{';
 
 // Compile
-exec('g++ -Wall -Wextra temp/main.cpp -o temp/prog 2>&1', $output);
-echo '"compilationErrors": ' . json_encode(implode("\n", $output)) . ',';
+exec('g++ -Wall -Wextra temp/main.cpp -o temp/prog 2>&1', $compilationOutput);
+echo '"compilationErrors": ' . json_encode(implode("\n", $compilationOutput)) . ',';
 
 // Run
-exec('timeout 3 ./temp/prog < ./temp/test.in', $output, $res);
-echo '"output": ' . json_encode(implode("\n", $output));
+exec('timeout 3 ./temp/prog < ./temp/test.in', $executionOutput, $res);
+echo '"output": ' . json_encode(implode("\n", $executionOutput));
 
 /*if ($res == 124) { // Timeout
     echo "[TIMEOUT]\n";
