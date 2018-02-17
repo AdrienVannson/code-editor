@@ -38,6 +38,8 @@ function openProject (name)
         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
             res = JSON.parse(xhr.responseText);
             editor.getDoc().setValue(res.code);
+
+            M.Modal.getInstance( document.getElementById('open-project') ).close();
         }
     };
 }
