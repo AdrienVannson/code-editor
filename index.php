@@ -10,7 +10,7 @@ $themeColor = 'blue-grey';
 
 <title>Code Editor</title>
 
-<link type="text/css" rel="stylesheet" href="static/materialize/css/materialize.min.css" media="screen,projection"/>
+<link type="text/css" rel="stylesheet" href="static/materialize/css/materialize.min.css"/>
 
 <link rel="stylesheet" href="static/codemirror-5.34.0/lib/codemirror.css">
 <link rel="stylesheet" href="static/codemirror-5.34.0/theme/dracula.css">
@@ -86,7 +86,7 @@ int main ()
 </div>
 
 
-<script type="text/javascript" src="static/materialize/js/materialize.min.js"></script>
+<script src="static/materialize/js/materialize.min.js"></script>
 
 <script src="static/codemirror-5.34.0/lib/codemirror.js"></script>
 <script src="static/codemirror-5.34.0/mode/clike/clike.js"></script>
