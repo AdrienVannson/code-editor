@@ -27,3 +27,17 @@ function run ()
         }
     };
 }
+
+function openProject (name)
+{
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "api/project.php?name="+name, true);
+    xhr.send();
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+            res = JSON.parse(xhr.responseText);
+            editor.getDoc().setValue(res.code);
+        }
+    };
+}

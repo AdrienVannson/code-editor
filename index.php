@@ -68,7 +68,11 @@ int main ()
         <?php
         foreach (getProjects() as $project) {
             ?>
-            <a href="#" class="btn-flat waves-effect"><?=$project->getName();?></a><br/>
+            <a href="#"
+               class="btn-flat waves-effect"
+               onclick="openProject('<?= urlencode($project->getName()); ?>');">
+                <?=$project->getName();?>
+            </a><br/>
             <?php
         }
         ?>
