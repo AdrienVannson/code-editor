@@ -7,7 +7,8 @@ var editor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
     mode: "text/x-c++src"
 });
 
-M.Modal.init(document.querySelector('.modal'), {});
+M.Modal.init(document.getElementById('execution'), {});
+M.Modal.init(document.getElementById('open-project'), {});
 
 
 function runProg ()
