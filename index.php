@@ -53,12 +53,29 @@ int main ()
 
 <!-- FAB -->
 <div class="fixed-action-btn">
-    <a class="btn-floating btn-large waves-effect <?=$themeColor?>" onclick='run()'>
+    <a class="btn-floating btn-large waves-effect <?=$themeColor?> modal-trigger" href="#execution">
         <svg fill="#FFFFFF" height="32" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg" style="margin-top: 12px;">
             <path d="M0 0h24v24H0z" fill="none"/>
             <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
         </svg>
     </a>
+</div>
+
+
+<!-- Tests -->
+<div class="modal" id="execution">
+    <div class="modal-content">
+        <h2>Tests</h2>
+
+        Compilation errors:
+        <div class="card-panel" id="compilation-errors"></div>
+
+        <a href="#" class="btn waves-effect green" onclick="run()">Go !</a>
+
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="modal-action modal-close waves-effect waves-red btn-flat">Close</a>
+    </div>
 </div>
 
 

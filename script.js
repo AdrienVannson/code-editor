@@ -23,7 +23,10 @@ function run ()
 
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-            alert(xhr.responseText);
+            res = JSON.parse(xhr.responseText);
+
+            var compilationErrors = res.compilationErrors.replace(/\n/g, '<br/>').replace(/ /g, '&nbsp;');
+            document.getElementById('compilation-errors').innerHTML = compilationErrors;
         }
     };
 }
