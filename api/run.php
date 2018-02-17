@@ -19,7 +19,12 @@ fclose($inputFile);
 exec('g++ -Wall -Wextra temp/main.cpp -o temp/prog');
 
 // Run
-exec('./temp/prog < ./temp/test.in', $output);
+exec('timeout 3 ./temp/prog < ./temp/test.in', $output, $res);
+
+if ($res == 124) { // Timeout
+    echo "[TIMEOUT]\n";
+}
+
 echo implode('\n', $output);
 
 // Clean
