@@ -2,6 +2,7 @@ var editor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
     lineNumbers: true,
     indentUnit: 4,
     autoCloseBrackets: true,
+    matchBrackets: true,
     theme: 'dracula',
     mode: "text/x-c++src"
 });
