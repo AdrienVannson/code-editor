@@ -22,11 +22,14 @@ echo '"compilationErrors": ' . json_encode(implode("\n", $compilationOutput)) . 
 
 // Run
 exec('timeout 3 ./temp/prog < ./temp/test.in', $executionOutput, $res);
-echo '"output": ' . json_encode(implode("\n", $executionOutput));
 
-/*if ($res == 124) { // Timeout
-    echo "[TIMEOUT]\n";
-}*/
+$executionOutput = implode("\n", $executionOutput);
+
+if ($res == 124) { // Timeout
+    $executionOutput = "[TIMEOUT]\n" . $executionOutput;
+}
+
+echo '"output": ' . json_encode($executionOutput);
 
 // Clean
 exec('rm -r temp');
