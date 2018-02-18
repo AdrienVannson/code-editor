@@ -93,17 +93,11 @@ function saveProject ()
 
     xhr.send('name='+name+'&code='+code);
 
-    /*xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-            res = JSON.parse(xhr.responseText);
-
-            var compilationErrors = res.compilationErrors.replace(/\n/g, '<br/>').replace(/ /g, '&nbsp;');
-            document.getElementById('compilation-errors').innerHTML = compilationErrors;
-
-            var output = res.output.replace(/\n/g, '<br/>').replace(/ /g, '&nbsp;');
-            document.getElementById('output').innerHTML = output;
+            M.toast({html: 'Project saved!'})
         }
-    };*/
+    };
 }
 
 
