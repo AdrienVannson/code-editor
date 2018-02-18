@@ -121,10 +121,10 @@ function updateProjects ()
 
             res.forEach(name => {
                 projects.innerHTML += '<a href="#" \
-                                          class="btn-flat waves-effect" \
+                                          class="collection-item" \
                                           onclick="openProject(\''+name+'\');"> \
                                             '+name+' \
-                                       </a><br/>';
+                                       </a>';
             });
         }
 
