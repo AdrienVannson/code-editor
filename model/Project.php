@@ -9,11 +9,13 @@ class Project
 
     function init ()
     {
-        if (is_dir($this->path)) {
-            exec('rm -r' . $this->path);
-        }
-
+        $this->delete();
         mkdir($this->path);
+    }
+
+    function delete ()
+    {
+        exec('rm -r ' . $this->path);
     }
 
     function getName ()

@@ -109,6 +109,7 @@ function saveProject ()
 function updateProjects ()
 {
     var projects = document.getElementById('projects');
+    projects.innerHTML = '';
 
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "api/projects.php");
@@ -128,6 +129,19 @@ function updateProjects ()
         }
 
         setProjectName(decodeURI(name.replace(/\+/g, ' ')));
+    };
+}
+
+function deleteProject (name)
+{
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "api/deleteProject.php?name="+name);
+    xhr.send();
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+            updateProjects();
+        }
     };
 }
 
