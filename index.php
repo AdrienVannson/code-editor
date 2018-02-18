@@ -76,19 +76,7 @@ $themeColor = 'blue-grey';
 <div class="modal" id="open-project">
     <div class="modal-content">
         <h2>Projects</h2>
-
-        <?php
-        foreach (getProjects() as $project) {
-            ?>
-            <a href="#"
-               class="btn-flat waves-effect"
-               onclick="openProject('<?= urlencode($project->getName()); ?>');">
-                <?=$project->getName();?>
-            </a><br/>
-            <?php
-        }
-        ?>
-
+        <div id="projects"></div>
     </div>
     <div class="modal-footer">
         <a href="#" class="modal-action modal-close waves-effect waves-red btn-flat">Close</a>

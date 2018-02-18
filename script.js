@@ -106,6 +106,31 @@ function saveProject ()
     };
 }
 
+function updateProjects ()
+{
+    var projects = document.getElementById('projects');
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "api/projects.php");
+    xhr.send();
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+            res = JSON.parse(xhr.responseText);
+
+            res.forEach(name => {
+                projects.innerHTML += '<a href="#" \
+                                          class="btn-flat waves-effect" \
+                                          onclick="openProject(\''+name+'\');"> \
+                                            '+name+' \
+                                       </a><br/>';
+            });
+        }
+
+        setProjectName(decodeURI(name.replace(/\+/g, ' ')));
+    };
+}
+
 
 var projectName = '';
 
@@ -122,3 +147,4 @@ M.Modal.init(document.getElementById('execution'), {});
 M.Modal.init(document.getElementById('open-project'), {});
 
 initProject();
+updateProjects();
