@@ -8,7 +8,7 @@ $themeColor = 'blue-grey';
 <html>
 <head>
 
-<title>Code Editor</title>
+<title></title>
 
 <link type="text/css" rel="stylesheet" href="static/materialize/css/materialize.min.css"/>
 
@@ -27,26 +27,18 @@ $themeColor = 'blue-grey';
 <!-- Toolbar -->
 <nav>
     <div class="nav-wrapper <?=$themeColor?>">
-        <a href="#" class="brand-logo">Code Editor</a>
+        <a href="#" class="brand-logo" id="title"></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#">New</a></li>
+            <li><a href="#" onclick="initProject();">New</a></li>
             <li><a class="modal-trigger" href="#open-project">Open</a></li>
+            <li><a href="#" onclick="saveProject();">Save</a></li>
         </ul>
     </div>
 </nav>
 
 
 <!-- Code editor -->
-<textarea id="code-editor">
-#include <iostream>
-
-using namespace std;
-
-int main ()
-{
-    return 0;
-}
-</textarea>
+<textarea id="code-editor"></textarea>
 
 
 <!-- FAB -->

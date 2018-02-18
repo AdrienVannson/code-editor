@@ -17,3 +17,8 @@ function getProjects ()
 
     return $projects;
 }
+
+function getProject ($name)
+{
+    return new Project(__DIR__.'/../projects/'.$name);
+}
