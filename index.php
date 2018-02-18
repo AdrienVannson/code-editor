@@ -27,7 +27,7 @@ $themeColor = 'blue-grey';
 <!-- Toolbar -->
 <nav>
     <div class="nav-wrapper <?=$themeColor?>">
-        <a href="#" class="brand-logo" id="title"></a>
+        <span class="brand-logo" id="title"></span>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="#" onclick="initProject();">New</a></li>
             <li><a class="modal-trigger" href="#open-project">Open</a></li>
