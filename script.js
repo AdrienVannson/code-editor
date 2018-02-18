@@ -120,11 +120,14 @@ function updateProjects ()
             res = JSON.parse(xhr.responseText);
 
             res.forEach(name => {
-                projects.innerHTML += '<a href="#" \
-                                          class="collection-item" \
-                                          onclick="openProject(\''+name+'\');"> \
-                                            '+name+' \
-                                       </a>';
+                projects.innerHTML += '<li class="collection-item"><div>\
+                                            <a href="#" onclick="openProject(\''+name+'\');"> \
+                                                '+name+' \
+                                            </a>\
+                                            <a href="#" onclick="deleteProject(\''+name+'\');" class="secondary-content">\
+                                                <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/><path d="M0 0h24v24H0z" fill="none"/></svg> \
+                                            </a>\
+                                        </div></li>';
             });
         }
 

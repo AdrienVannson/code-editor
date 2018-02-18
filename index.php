@@ -76,7 +76,7 @@ $themeColor = 'blue-grey';
 <div class="modal" id="open-project">
     <div class="modal-content">
         <h2>Projects</h2>
-        <div id="projects" class="collection"></div>
+        <ul id="projects" class="collection"></ul>
     </div>
     <div class="modal-footer">
         <a href="#" class="modal-action modal-close waves-effect waves-red btn-flat">Close</a>
