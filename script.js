@@ -10,6 +10,10 @@ var editor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
 M.Modal.init(document.getElementById('execution'), {});
 M.Modal.init(document.getElementById('open-project'), {});
 
+// Confirmation on leaving
+window.onbeforeunload = function() {
+    return confirm();
+};
 
 function runProg ()
 {
