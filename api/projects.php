@@ -3,21 +3,16 @@
 
 $projectsFolder = opendir('../projects/');
 
-echo '[';
-
-$isFirst = true;
+$projectsName = [];
 
 while (($file = readdir($projectsFolder)) !== false) {
 
-    if (!$isFirst) {
-        echo ',';
-    }
-
     if ($file != '.' && $file != '..') {
-        echo '"' . $file . '"';
-        $isFirst = false;
+        array_push($projectsName, '"'.$file.'"');
     }
 }
 closedir($projectsFolder);
 
-echo ']';
+sort($projectsName, SORT_NATURAL);
+
+echo '[' . join(',', $projectsName) . ']';
