@@ -69,18 +69,24 @@ function openProject (name)
             M.Modal.getInstance( document.getElementById('open-project') ).close();
         }
 
-        setProjectName(name);
+        setProjectName(decodeURI(name.replace(/\+/g, ' ')));
     };
 }
 
 function saveProject ()
 {
     if (projectName == '') {
-        setProjectName(prompt('Project name:'));
+        var name = prompt('Project name:');
+
+        if (name === null) {
+            name = '';
+        }
+
+        setProjectName(name);
     }
 
     if (projectName == '') {
-        alert('Error: invalid name');
+        M.toast({html: 'Error: invalid name'})
         return false;
     }
 
