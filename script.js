@@ -82,12 +82,12 @@ function saveProject ()
             name = '';
         }
 
-        setProjectName(name);
-    }
+        if (! /^\w+$/.test(name)) {
+            M.toast({html: 'Error: invalid name'})
+            return false;
+        }
 
-    if (projectName == '') {
-        M.toast({html: 'Error: invalid name'})
-        return false;
+        setProjectName(name);
     }
 
     var xhr = new XMLHttpRequest();
