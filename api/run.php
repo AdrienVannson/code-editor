@@ -1,7 +1,7 @@
 <?php
 
 $code = $_POST['code'];
-$input = $_POST['input'];
+$nbTests = $_POST['nbTests'];
 
 // Save
 mkdir('temp');
@@ -10,9 +10,11 @@ $sourceFile = fopen('temp/main.cpp', 'w');
 fwrite($sourceFile, $code);
 fclose($sourceFile);
 
-$inputFile = fopen('temp/test.in', 'w');
-fwrite($inputFile, $input);
-fclose($inputFile);
+for ($iTest=0; $iTest<$nbTests; $iTest++) {
+    $inputFile = fopen('temp/input'.$iTest, 'w');
+    fwrite($inputFile, $_POST['input'.$iTest]);
+    fclose($inputFile);
+}
 
 echo '{';
 
@@ -21,7 +23,7 @@ exec('g++ -Wall -Wextra temp/main.cpp -o temp/prog 2>&1', $compilationOutput);
 echo '"compilationErrors": ' . json_encode(implode("\n", $compilationOutput)) . ',';
 
 // Run
-exec('timeout 3 ./temp/prog < ./temp/test.in', $executionOutput, $res);
+exec('timeout 3 ./temp/prog < ./temp/input0', $executionOutput, $res);
 
 $executionOutput = implode("\n", $executionOutput);
 

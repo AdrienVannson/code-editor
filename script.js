@@ -38,9 +38,14 @@ function runProg ()
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
     var code = encodeURIComponent(editor.getValue());
-    var input = encodeURIComponent('42');
 
-    xhr.send('code='+code+'&input='+input);
+    var toSend = 'code=' + code + '&nbTests=' + nbTests;
+
+    for (var iTest=0; iTest<nbTests; iTest++) {
+        toSend += '&input'+iTest+'=' + encodeURIComponent(document.getElementById('input'+iTest).value);
+    }
+
+    xhr.send(toSend);
 
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
@@ -49,8 +54,8 @@ function runProg ()
             var compilationErrors = res.compilationErrors.replace(/\n/g, '<br/>').replace(/ /g, '&nbsp;');
             document.getElementById('compilation-errors').innerHTML = compilationErrors;
 
-            var output = res.output.replace(/\n/g, '<br/>').replace(/ /g, '&nbsp;');
-            document.getElementById('output').innerHTML = output;
+            document.getElementById('output0').innerHTML = res.output;
+            M.textareaAutoResize(document.getElementById('output0'));
         }
     };
 }
@@ -151,6 +156,7 @@ function deleteProject (name)
 
 
 var projectName = '';
+var nbTests = 1;
 
 var editor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
     lineNumbers: true,
