@@ -5,6 +5,7 @@ window.onbeforeunload = function() {
 
 function setProjectName (name)
 {
+    alert(name);
     projectName = name;
 
     var title = 'Code Editor';
@@ -72,9 +73,9 @@ function openProject (name)
             editor.getDoc().setValue(res.code);
 
             M.Modal.getInstance( document.getElementById('open-project') ).close();
-        }
 
-        setProjectName(decodeURI(name.replace(/\+/g, ' ')));
+            setProjectName(decodeURI(name.replace(/\+/g, ' ')));
+        }
     };
 }
 
@@ -136,8 +137,6 @@ function updateProjects ()
                                         </div></li>';
             });
         }
-
-        setProjectName(decodeURI(name.replace(/\+/g, ' ')));
     };
 }
 
