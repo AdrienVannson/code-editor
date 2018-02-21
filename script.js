@@ -5,7 +5,6 @@ window.onbeforeunload = function() {
 
 function setProjectName (name)
 {
-    alert(name);
     projectName = name;
 
     var title = 'Code Editor';
