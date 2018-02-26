@@ -49,6 +49,8 @@ function runProg ()
 
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+            M.toast({html: 'Done!'})
+
             res = JSON.parse(xhr.responseText);
 
             var compilationErrors = res.compilationErrors.replace(/\n/g, '<br/>').replace(/ /g, '&nbsp;');
