@@ -23,7 +23,7 @@ exec('g++ -Wall -Wextra temp/main.cpp -o temp/prog 2>&1', $compilationOutput);
 echo '"compilationErrors": ' . json_encode(implode("\n", $compilationOutput)) . ',';
 
 // Run
-exec('timeout 3 ./temp/prog < ./temp/input0', $executionOutput, $res);
+exec('timeout 3 ./temp/prog < ./temp/input0 2>&1', $executionOutput, $res);
 
 $executionOutput = implode("\n", $executionOutput);
 
