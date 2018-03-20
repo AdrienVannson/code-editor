@@ -38,5 +38,22 @@ class Project
         file_put_contents($this->path.'/test'.$iTest, $contents);
     }
 
+    function getTests ()
+    {
+        $tests = [];
+
+        for ($iTest=0; true; $iTest++) {
+            $path = $this->path.'/test'.$iTest;
+
+            if (!file_exists($path)) {
+                break;
+            }
+
+            array_push($tests, file_get_contents($path));
+        }
+
+        return $tests;
+    }
+
     private $path;
 }

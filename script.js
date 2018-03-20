@@ -64,14 +64,14 @@ function runProg ()
     };
 }
 
-function addTest ()
+function addTest (contents='')
 {
     document.getElementById('tests').innerHTML += ' \
         <div class="card"> \
             <div class="card-content row"> \
                 <span class="card-title">Test '+nbTests+'</span> \
                 <div class="input-field col s6"> \
-                    <textarea id="input'+nbTests+'" class="materialize-textarea"></textarea> \
+                    <textarea id="input'+nbTests+'" class="materialize-textarea">'+contents+'</textarea> \
                     <label for="input'+nbTests+'">Input</label> \
                 </div> \
                 <div class="input-field col s6"> \
@@ -94,6 +94,14 @@ function openProject (name)
         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
             res = JSON.parse(xhr.responseText);
             editor.getDoc().setValue(res.code);
+
+            // Tests
+            document.getElementById('tests').innerHTML = '';
+            nbTests = 0;
+
+            res.tests.forEach(test => {
+                addTest(test);
+            });
 
             M.Modal.getInstance( document.getElementById('open-project') ).close();
 
