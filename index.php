@@ -28,6 +28,7 @@ $themeColor = 'blue-grey';
 <nav>
     <div class="nav-wrapper <?=$themeColor?>">
         <span class="brand-logo" id="title"></span>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger">Menu</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="#" onclick="initProject();">New</a></li>
             <li><a class="modal-trigger" href="#open-project">Open</a></li>
@@ -35,6 +36,12 @@ $themeColor = 'blue-grey';
         </ul>
     </div>
 </nav>
+
+<ul class="sidenav" id="mobile-demo">
+    <li><a href="#" onclick="initProject();">New</a></li>
+    <li><a class="modal-trigger" href="#open-project">Open</a></li>
+    <li><a href="#" onclick="saveProject();">Save</a></li>
+</ul>
 
 
 <!-- Code editor -->

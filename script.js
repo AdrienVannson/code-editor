@@ -206,6 +206,8 @@ var editor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
 M.Modal.init(document.getElementById('execution'), {});
 M.Modal.init(document.getElementById('open-project'), {});
 
+M.Sidenav.init(document.querySelector('.sidenav'), {});
+
 initProject();
 updateProjects();
 addTest();
