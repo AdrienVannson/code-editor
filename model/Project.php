@@ -33,5 +33,10 @@ class Project
         file_put_contents($this->path.'/main.cpp', $code);
     }
 
+    function setTest ($iTest, $contents)
+    {
+        file_put_contents($this->path.'/test'.$iTest, $contents);
+    }
+
     private $path;
 }

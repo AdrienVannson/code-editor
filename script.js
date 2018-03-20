@@ -126,7 +126,13 @@ function saveProject ()
     var name = encodeURIComponent(projectName);
     var code = encodeURIComponent(editor.getValue());
 
-    xhr.send('name='+name+'&code='+code);
+    var toSend = 'name='+name+'&code='+code+'&nbTests='+nbTests;
+
+    for (var iTest=0; iTest<nbTests; iTest++) {
+        toSend += '&test'+iTest+'=' + encodeURIComponent(document.getElementById('input'+iTest).value);
+    }
+
+    xhr.send(toSend);
 
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
