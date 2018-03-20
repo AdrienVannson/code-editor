@@ -30,7 +30,6 @@ class Project
 
     function setCode ($code)
     {
-        unlink($this->path);
         file_put_contents($this->path.'/main.cpp', $code);
     }
 
