@@ -60,21 +60,9 @@ $themeColor = 'blue-grey';
         Compilation errors:
         <div class="card-panel" id="compilation-errors"></div>
 
-        <div class="card">
-            <div class="card-content row">
-            <span class="card-title">Test 0</span>
-                <div class="input-field col s6">
-                    <textarea id="input0" class="materialize-textarea"></textarea>
-                    <label for="input0">Input</label>
-                </div>
-                <div class="input-field col s6">
-                    <textarea id="output0" class="materialize-textarea"></textarea>
-                    <label for="output0">Output</label>
-                </div>
-            </div>
-        </div>
+        <div id="tests"></div>
 
-        <a class="btn-floating btn-large green waves-effect">
+        <a class="btn-floating btn-large green waves-effect" onclick="addTest();">
             <svg fill="#FFFFFF" height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="margin-top: 12px;">
                 <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
                 <path d="M0 0h24v24H0z" fill="none"/>

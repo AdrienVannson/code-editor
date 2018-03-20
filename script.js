@@ -62,6 +62,26 @@ function runProg ()
     };
 }
 
+function addTest ()
+{
+    document.getElementById('tests').innerHTML += ' \
+        <div class="card"> \
+            <div class="card-content row"> \
+                <span class="card-title">Test '+nbTests+'</span> \
+                <div class="input-field col s6"> \
+                    <textarea id="input'+nbTests+'" class="materialize-textarea"></textarea> \
+                    <label for="input'+nbTests+'">Input</label> \
+                </div> \
+                <div class="input-field col s6"> \
+                    <textarea id="output'+nbTests+'" class="materialize-textarea"></textarea> \
+                    <label for="output'+nbTests+'">Output</label> \
+                </div> \
+            </div> \
+        </div>';
+
+    nbTests++;
+}
+
 function openProject (name)
 {
     var xhr = new XMLHttpRequest();
@@ -156,7 +176,7 @@ function deleteProject (name)
 
 
 var projectName = '';
-var nbTests = 1;
+var nbTests = 0;
 
 var editor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
     lineNumbers: true,
@@ -172,3 +192,4 @@ M.Modal.init(document.getElementById('open-project'), {});
 
 initProject();
 updateProjects();
+addTest();
