@@ -23,15 +23,21 @@ exec('g++ -Wall -Wextra temp/main.cpp -o temp/prog 2>&1', $compilationOutput);
 echo '"compilationErrors": ' . json_encode(implode("\n", $compilationOutput)) . ',';
 
 // Run
-exec('timeout 3 ./temp/prog < ./temp/input0 2>&1', $executionOutput, $res);
+for ($iTest=0; $iTest<$nbTests; $iTest++) {
+    exec("timeout 3 ./temp/prog < ./temp/input$iTest 2>&1", $executionOutput, $res);
 
-$executionOutput = implode("\n", $executionOutput);
+    $executionOutput = implode("\n", $executionOutput);
 
-if ($res == 124) { // Timeout
-    $executionOutput = "[TIMEOUT]\n" . $executionOutput;
+    if ($res == 124) { // Timeout
+        $executionOutput = "[TIMEOUT]\n" . $executionOutput;
+    }
+
+    echo "\"output$iTest\": " . json_encode($executionOutput);
+
+    if ($iTest < $nbTests-1) {
+        echo ',';
+    }
 }
-
-echo '"output": ' . json_encode($executionOutput);
 
 // Clean
 exec('rm -r temp');

@@ -56,8 +56,10 @@ function runProg ()
             var compilationErrors = res.compilationErrors.replace(/\n/g, '<br/>').replace(/ /g, '&nbsp;');
             document.getElementById('compilation-errors').innerHTML = compilationErrors;
 
-            document.getElementById('output0').innerHTML = res.output;
-            M.textareaAutoResize(document.getElementById('output0'));
+            for (var iTest=0; iTest<nbTests; iTest++) {
+                document.getElementById('output'+iTest).innerHTML = res['output'+iTest];
+                M.textareaAutoResize(document.getElementById('output'+iTest));
+            }
         }
     };
 }
