@@ -33,6 +33,7 @@ $themeColor = 'blue-grey';
             <li><a href="#" onclick="initProject();">New</a></li>
             <li><a class="modal-trigger" href="#open-project">Open</a></li>
             <li><a href="#" onclick="saveProject();">Save</a></li>
+            <li><a class="modal-trigger" href="#about">About</a></li>
         </ul>
     </div>
 </nav>
@@ -41,6 +42,7 @@ $themeColor = 'blue-grey';
     <li><a href="#" onclick="initProject();">New</a></li>
     <li><a class="modal-trigger" href="#open-project">Open</a></li>
     <li><a href="#" onclick="saveProject();">Save</a></li>
+    <li><a class="modal-trigger" href="#about">About</a></li>
 </ul>
 
 
@@ -90,6 +92,19 @@ $themeColor = 'blue-grey';
     <div class="modal-content">
         <h2>Projects</h2>
         <ul id="projects" class="collection"></ul>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="modal-action modal-close waves-effect waves-red btn-flat">Close</a>
+    </div>
+</div>
+
+
+<!-- About -->
+<div class="modal" id="about">
+    <div class="modal-content">
+        <h2>About code-editor</h2>
+        <p>Developed by Adrien VANNSON</p>
+        <p>Contact: <a href"mailto:adrien.vannson@gmail.com">adrien.vannson@gmail.com</a>
     </div>
     <div class="modal-footer">
         <a href="#" class="modal-action modal-close waves-effect waves-red btn-flat">Close</a>
