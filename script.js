@@ -29,6 +29,10 @@ int main ()\n\
 {\n\
     return 0;\n\
 }\n');
+
+    // Suppression des tests
+    nbTests = 0;
+    document.getElementById('tests').innerHTML = '';
 }
 
 function runProg ()
