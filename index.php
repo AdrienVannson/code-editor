@@ -104,7 +104,7 @@ $themeColor = 'blue-grey';
     <div class="modal-content">
         <h2>About code-editor</h2>
         <p>Developed by Adrien VANNSON</p>
-        <p>Contact: <a href"mailto:adrien.vannson@gmail.com">adrien.vannson@gmail.com</a>
+        <p>Contact: <a href="mailto:adrien.vannson@gmail.com">adrien.vannson@gmail.com</a>
     </div>
     <div class="modal-footer">
         <a href="#" class="modal-action modal-close waves-effect waves-red btn-flat">Close</a>
